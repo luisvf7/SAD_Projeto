@@ -18,6 +18,8 @@ GROUP BY t.id, t.tipoturno;
 
 __Nº Minimo e Máximo de Estudantes Inscritos nos Turnos p/ TipoTurno , Ano e Curso__
 
+(TQAM - Temos que arranjar esta meita)
+
 ```sql
 SELECT tipoturno
 FROM
