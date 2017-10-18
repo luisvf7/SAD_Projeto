@@ -24,11 +24,11 @@ __Nº Minimo e Máximo de Estudantes Inscritos nos Turnos p/ TipoTurno , Ano e C
 SELECT tipoturno
 FROM
 	(SELECT t.id, t.turnouc, count(*) AS EstInscritos
-	FROM turnos t JOIN turno_user tu (tu.turno_id = t.id)
+	FROM ei_sad_proj_gisem.v_turnos t JOIN ei_sad_proj_gisem.v_turno_user tu (tu.turno_id = t.id)
 	GROUP BY t.tipoturno, t.id, t.anouc)
 GROUP BY tipoturno, anouc
 
 SELECT t.id, t.turnouc, count(*) AS EstInscritos
-FROM turnos t JOIN turno_user tu (tu.turno_id = t.id)
+FROM ei_sad_proj_gisem.v_turnos t JOIN ei_sad_proj_gisem.v_turno_user tu (tu.turno_id = t.id)
 GROUP BY t.tipoturno, t.id, t.anouc;
 ```
