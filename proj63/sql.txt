@@ -1,5 +1,5 @@
 
-__NÂº Turnos p/ Tipo na UC SAD__
+__Nº Turnos p/ Tipo na UC SAD__
 ```sql
 SELECT u.nomeuc, t.tipoturno, count(*)
 FROM ei_sad_proj_gisem.v_turnos t
@@ -7,7 +7,7 @@ FROM ei_sad_proj_gisem.v_turnos t
 WHERE u.id = 229
 GROUP BY u.nomeuc, t.tipoturno;
 ```
-__NÂº Estudantes em cada Turno__
+__Nº Estudantes em cada Turno__
 ```sql
 SELECT t.id, t.turnouc ,count(*)
 FROM ei_sad_proj_gisem.v_turnos t
@@ -17,7 +17,7 @@ GROUP BY t.id, t.turnouc;
 ```
 
 
-__NÂº Minimo e MÃ¡ximo de Estudantes Inscritos nos Turnos p/ TipoTurno , Ano e Curso__
+__Nº Minimo e Máximo de Estudantes Inscritos nos Turnos p/ TipoTurno , Ano e Curso__
 
 ```sql
 SELECT t.anouc AS anoUc, t.tipoturno AS tipoTurno , t.turnouc AS turnoUc, count(*) AS numEstudantes
@@ -36,7 +36,7 @@ GROUP BY anoUc, tipoTurno
 ORDER BY 1;
 ```
 
-__NÂº Minimo e MÃ¡ximo de Estudantes presentes nas Aulas p/ Turno , em SAD__
+__Nº Minimo e Máximo de Estudantes presentes nas Aulas p/ Turno , em SAD__
 
 ```sql
 SELECT turnoUc, MIN(numPresencas), MAX(numPresencas)
