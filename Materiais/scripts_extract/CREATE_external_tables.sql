@@ -97,3 +97,31 @@ ORGANIZATION EXTERNAL
 	LOCATION ('Departamentos.csv')
 )
 REJECT LIMIT UNLIMITED;
+
+CREATE TABLE t_ext_curso_ei(
+	uc			VARCHAR2(100),
+	area_cientifica		VARCHAR2(10),
+	departamento		VARCHAR2(10)
+)
+ORGANIZATION EXTERNAL
+(
+	TYPE oracle_loader
+	DEFAULT DIRECTORY src_files
+	ACCESS PARAMETERS
+	(
+		RECORDS DELIMITED BY newline
+		BADFILE 'curso_ei_proj63.bad'
+		DISCARDFILE 'curso_ei_proj63.dis'
+		LOGFILE 'curso_ei_proj63.log'
+		SKIP 3
+		FIELDS TERMINATED BY ";" OPTIONALLY ENCLOSED BY '"' 
+		REJECT ROWS WITH ALL NULL FIELDS
+		(
+			uc			CHAR(100),
+			area_cientifica		CHAR(10),
+			departamento		CHAR(10)
+		)
+	)
+	LOCATION ('Curso_EI.csv')
+)
+REJECT LIMIT UNLIMITED;
