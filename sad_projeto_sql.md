@@ -89,6 +89,12 @@ FROM (SELECT t.turnouc AS turnoUc, aulas.num_presencas AS numPresencas
         FROM ei_sad_proj_gisem.v_turnos t JOIN ei_sad_proj_gisem.v_aulas_semana aulas ON (t.id = aulas.turno_id)
         WHERE t.uc_id = 229)
 GROUP BY turnoUc
-ORDER BY 1
 ;
+
+SELECT turnoUc, aulas.dia || '/' ||aulas.mes||'/' || aulas.ano, MIN(numPresencas)
+FROM (SELECT t.turnouc AS turnoUc, aulas.num_presencas AS numPresencas
+        FROM ei_sad_proj_gisem.v_turnos t JOIN ei_sad_proj_gisem.v_aulas_semana aulas ON (t.id = aulas.turno_id)
+        WHERE t.uc_id = 229)
+GROUP BY turnoUc,
+
 ```
