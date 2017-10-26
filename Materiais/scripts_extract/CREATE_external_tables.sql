@@ -15,7 +15,6 @@ ORGANIZATION EXTERNAL
         SKIP 1
         FIELDS TERMINATED BY ";" OPTIONALLY ENCLOSED BY '"'
         MISSING FIELD VALUES ARE NULL
-        REJECT ROWS WITH ALL NULL FIELDS
         (
             name        CHAR(50),
             sigla       CHAR(10)
