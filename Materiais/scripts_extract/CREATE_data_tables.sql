@@ -81,3 +81,25 @@ CREATE TABLE t_data_categories(
 	name		VARCHAR2(30),
 	rejected_by_screen CHAR	DEFAULT(0)		-- {0=not rejected,1=rejected,will not be used on LOAD stage}
 );
+
+CREATE TABLE t_data_area_cientifica_new(
+	name        VARCHAR2(50),
+    sigla       VARCHAR2(10)
+);
+
+CREATE TABLE t_data_area_cientifica_old AS SELECT * FROM t_data_area_cientifica_new;
+
+CREATE TABLE t_data_departamentos_new(
+	name        VARCHAR2(50),
+    sigla       VARCHAR2(10)
+);
+
+CREATE TABLE t_data_departamentos_old AS SELECT * FROM t_data_departamentos_new;
+
+CREATE TABLE t_data_curso_ei_new(
+	uc          VARCHAR2(100),
+    area_cientifica     VARCHAR2(10),
+    departamento        VARCHAR2(10)
+);
+
+CREATE TABLE t_data_curso_ei_old AS SELECT * FROM t_data_curso_ei_new;
