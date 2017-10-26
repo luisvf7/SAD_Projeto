@@ -3,10 +3,10 @@
 @@CREATE_lookup_tables
 
 -- CREATES THE TRANSFORMATION ERROR LOGGER (TEL) STRUCTURES
-@@CREATE_tel_tables
-@@CREATE_sequences
-@@CREATE_triggers
-@@CREATE_views
+@@create_tel_tables
+@@create_sequences
+@@create_triggers
+@@create_views
 
 @@CREATE_package_pck_transform
 @@INSERT_data.sql

@@ -1,2 +1,2 @@
-@@CREATE_tables
-@@CREATE_package_pck_log
+@@create_tables
+@@create_package_pck_log

@@ -77,23 +77,7 @@ CREATE TABLE t_data_linesofsalepromotions(
 
 
 CREATE TABLE t_data_categories(
-	id			CHAR(5),
+	id		CHAR(5),
 	name		VARCHAR2(30),
 	rejected_by_screen CHAR	DEFAULT(0)		-- {0=not rejected,1=rejected,will not be used on LOAD stage}
 );
-
-TABELAS PROJETO
-
-CREATE TABLE t_data_area_cientifica(
-	id			NUMBER(10),
-	name		VARCHAR2(50),
-	sigla		VARCHAR2(10)
-);
-
-
-CREATE TABLE t_data_departamentos(
-	id			NUMBER(10),
-	name		VARCHAR2(50),
-	sigla		VARCHAR2(10)
-);
-
