@@ -31,6 +31,12 @@ FROM (SELECT t.anouc AS anoUc, t.tipoturno AS tipoTurno , t.turnouc AS turnoUc, 
 GROUP BY anoUc, tipoTurno
 ORDER BY 1;
 
+--  1.4
+SELECT ce.uc, ce.area_cientifica, t.tipoturno, count(*)
+FROM ei_sad_proj_gisem.v_turnos t
+	JOIN t_ext_curso_ei ce ON (ce.uc LIKE t.nomeuc || '%')
+GROUP BY ce.uc, t.tipoturno,ce.area_cientifica;
+
 --  2.1
 SELECT t.turnouc, aulas.num_presencas, aulas.semana, aulas.diasemana
 FROM ei_sad_proj_gisem.v_turnos t JOIN ei_sad_proj_gisem.v_aulas_semana aulas ON (t.id = aulas.turno_id)
